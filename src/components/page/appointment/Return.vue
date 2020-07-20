@@ -21,8 +21,8 @@
       <el-input v-model="records_num" style="width:195px" placeholder="请输入"></el-input>
 
       <div>
-        <el-button icon="el-icon-search" type="danger" @click="search">搜索</el-button>
-        <el-button icon="el-icon-delete" type="danger" @click="clear">清空</el-button>
+        <el-button icon="el-icon-search" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="search">搜索</el-button>
+        <el-button icon="el-icon-delete" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="clear">清空</el-button>
       </div>
     </div>
     <br />
@@ -38,7 +38,7 @@
 
       <el-table-column label="操作">
         <template slot-scope="scope">
-          <el-button size="small" type="danger" @click="settle(scope.row,scope.$index)">退费</el-button>
+          <el-button size="small" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="settle(scope.row,scope.$index)">退费</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -56,13 +56,13 @@
       <span>退费项目：{{returnItem}}</span>
       <br />
       <br />
-      <el-link :underline="false" type="danger">退费金额：{{sum}} ¥</el-link>
+      <el-link :underline="false" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white">退费金额：{{sum}} ¥</el-link>
       <br />
       <br />
       <span>请在退费完成后点击确定打印发票</span>
       <span slot="footer" class="dialog-footer">
         <el-button @click="dialogVisible = false">取 消</el-button>
-        <el-button type="danger" @click="sureSettle">确 定</el-button>
+        <el-button style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="sureSettle">确 定</el-button>
       </span>
     </el-dialog>
   </div>

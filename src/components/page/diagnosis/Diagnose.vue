@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="">
     <el-breadcrumb separator-class="el-icon-arrow-right">
       <el-breadcrumb-item :to="{ path: '/main' }">首页</el-breadcrumb-item>
       <el-breadcrumb-item>医生工作站</el-breadcrumb-item>
@@ -17,7 +17,7 @@
             <el-button slot="append" icon="el-icon-search"></el-button>
           </el-input>
 
-          <el-button size="small" icon="el-icon-refresh-right" type="danger" @click="refresh"></el-button>
+          <el-button size="small" icon="el-icon-refresh-right" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="refresh"></el-button>
         </div>
         <br />
         <!-- 左侧tab -->
@@ -35,7 +35,7 @@
               <el-table-column prop="age" label="年龄" width="75"></el-table-column>
               <el-table-column label="操作">
                 <template slot-scope="scope">
-                  <el-button size="small" type="danger" @click="dia(scope.row)">诊断</el-button>
+                  <el-button size="small" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="dia(scope.row)">诊断</el-button>
                 </template>
               </el-table-column>
             </el-table>
@@ -52,7 +52,7 @@
               <el-table-column prop="age" label="年龄" width="75"></el-table-column>
               <el-table-column label="操作">
                 <template slot-scope="scope">
-                  <el-button size="small" type="danger" @click="look(scope.row)">查看</el-button>
+                  <el-button size="small" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="look(scope.row)">查看</el-button>
                 </template>
               </el-table-column>
             </el-table>
@@ -70,7 +70,7 @@
               <el-table-column prop="age" label="年龄" width="75"></el-table-column>
               <el-table-column label="操作">
                 <template slot-scope="scope">
-                  <el-button size="small" type="danger" @click="dia(scope.row)">诊断</el-button>
+                  <el-button size="small" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="dia(scope.row)">诊断</el-button>
                 </template>
               </el-table-column>
             </el-table>
@@ -87,7 +87,7 @@
               <el-table-column prop="age" label="年龄" width="75"></el-table-column>
               <el-table-column label="操作">
                 <template slot-scope="scope">
-                  <el-button size="small" type="danger" @click="drug(scope.row)">查看</el-button>
+                  <el-button size="small" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="drug(scope.row)">查看</el-button>
                 </template>
               </el-table-column>
             </el-table>
@@ -99,7 +99,7 @@
       <div>
         <!-- 顶部文字div -->
         <div class="head-text">
-          <el-link :underline="false" type="danger">当前患者:</el-link>
+          <el-link :underline="false" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white">当前患者:</el-link>
           <span>{{Srecords_num}}</span>
           <span>{{Sname}}</span>
           <span>{{Sage}}</span>
@@ -110,16 +110,17 @@
           <el-tab-pane :disabled="paneDisable" label="病历首页" name="first">
             <!-- 顶部按钮 -->
             <div class="head-button">
-              <el-button type="primary" icon="el-icon-s-order" @click="save" size="small" plain>暂存</el-button>
-              <el-button type="success" icon="el-icon-success" @click="submit" size="small" plain>提交</el-button>
+              <el-button  icon="el-icon-s-order" @click="save" size="small" plain>暂存</el-button>
               <el-button
-                type="danger"
+                      style="
+  background-image: linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" icon="el-icon-success" @click="submit" size="small" plain>提交</el-button>
+              <el-button
                 icon="el-icon-delete-solid"
                 @click="clear"
                 size="small"
                 plain
               >清空</el-button>
-              <el-button type="warning" icon="el-icon-refresh" size="small" plain>刷新</el-button>
+              <el-button icon="el-icon-refresh" size="small" plain>刷新</el-button>
             </div>
             <span>
               主&nbsp;&nbsp;&nbsp;&nbsp;诉：&nbsp;&nbsp;&nbsp;
@@ -180,16 +181,17 @@
           </el-tab-pane>
           <el-tab-pane :disabled="paneDisable" label="检查申请">
             <div class="head-button">
-              <el-button type="success" icon="el-icon-success" @click="done" size="small" plain>开立项目</el-button>
               <el-button
-                type="danger"
+                      style="
+  background-image: linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" icon="el-icon-success" @click="done" size="small" plain>开立项目</el-button>
+              <el-button
                 icon="el-icon-delete-solid"
                 @click="clear"
                 size="small"
                 plain
               >作废项目</el-button>
-              <el-button type="primary" icon="el-icon-s-order" @click="save" size="small" plain>存为套组</el-button>
-              <el-button type="warning" icon="el-icon-refresh" size="small" plain>刷新</el-button>
+              <el-button icon="el-icon-s-order" @click="save" size="small" plain>存为套组</el-button>
+              <el-button icon="el-icon-refresh" size="small" plain>刷新</el-button>
             </div>
             <el-link :underline="false">检查申请项目</el-link>
             <el-divider></el-divider>
@@ -233,7 +235,7 @@
                   <el-table-column prop="name" label="模板名称" width="200"></el-table-column>
                   <el-table-column label="操作">
                     <template slot-scope="scope">
-                      <el-button size="small" type="danger" @click="template(scope.row)">查看</el-button>
+                      <el-button size="small" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="template(scope.row)">查看</el-button>
                     </template>
                   </el-table-column>
                 </el-table>
@@ -256,16 +258,17 @@
           </el-tab-pane>
           <el-tab-pane :disabled="paneDisable" label="检验申请">
             <div class="head-button">
-              <el-button type="success" icon="el-icon-success" @click="done" size="small" plain>开立项目</el-button>
               <el-button
-                type="danger"
+                      style="
+  background-image: linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white"icon="el-icon-success" @click="done" size="small" plain>开立项目</el-button>
+              <el-button
                 icon="el-icon-delete-solid"
                 @click="clear"
                 size="small"
                 plain
               >作废项目</el-button>
-              <el-button type="primary" icon="el-icon-s-order" @click="save" size="small" plain>存为套组</el-button>
-              <el-button type="warning" icon="el-icon-refresh" size="small" plain>刷新</el-button>
+              <el-button icon="el-icon-s-order" @click="save" size="small" plain>存为套组</el-button>
+              <el-button icon="el-icon-refresh" size="small" plain>刷新</el-button>
             </div>
             <el-link :underline="false">检验申请项目</el-link>
             <el-divider></el-divider>
@@ -309,7 +312,7 @@
                   <el-table-column prop="name" label="模板名称" width="200"></el-table-column>
                   <el-table-column label="操作">
                     <template slot-scope="scope">
-                      <el-button size="small" type="danger" @click="template(scope.row)">查看</el-button>
+                      <el-button size="small" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="template(scope.row)">查看</el-button>
                     </template>
                   </el-table-column>
                 </el-table>
@@ -332,16 +335,17 @@
           </el-tab-pane>
           <el-tab-pane :disabled="paneDisable" label="门诊确诊">
             <div class="head-button">
-              <el-button type="primary" icon="el-icon-s-order" @click="save" size="small" plain>保存</el-button>
-              <el-button type="success" icon="el-icon-success" @click="submit" size="small" plain>提交</el-button>
+              <el-button icon="el-icon-s-order" @click="save" size="small" plain>保存</el-button>
               <el-button
-                type="danger"
+                      style="
+  background-image: linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" icon="el-icon-success" @click="submit" size="small" plain>提交</el-button>
+              <el-button
                 icon="el-icon-delete-solid"
                 @click="clear"
                 size="small"
                 plain
               >清空</el-button>
-              <el-button type="warning" icon="el-icon-refresh" size="small" plain>刷新</el-button>
+              <el-button icon="el-icon-refresh" size="small" plain>刷新</el-button>
             </div>
 
             <el-link :underline="false" type="primary">初步诊断</el-link>
@@ -350,13 +354,13 @@
             <br />
             <br />
             <br />
-            <el-link :underline="false" type="danger">检查结果</el-link>
+            <el-link :underline="false" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white">检查结果</el-link>
             <el-divider></el-divider>
             <span>肺部小面积阴影</span>
             <br />
             <br />
             <br />
-            <el-link :underline="false" type="danger">检验结果</el-link>
+            <el-link :underline="false" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white">检验结果</el-link>
             <el-divider></el-divider>
             <span>新冠肺炎核酸检测阳性</span>
             <br />
@@ -395,16 +399,18 @@
           </el-tab-pane>
           <el-tab-pane :disabled="paneDisable" label="处置申请">
             <div class="head-button">
-              <el-button type="success" icon="el-icon-success" @click="done" size="small" plain>开立项目</el-button>
+              <el-button icon="el-icon-success" @click="done" size="small" plain
+              style="
+  background-image: linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white"
+              >开立项目</el-button>
               <el-button
-                type="danger"
                 icon="el-icon-delete-solid"
                 @click="clear"
                 size="small"
                 plain
               >作废项目</el-button>
-              <el-button type="primary" icon="el-icon-s-order" @click="save" size="small" plain>存为套组</el-button>
-              <el-button type="warning" icon="el-icon-refresh" size="small" plain>刷新</el-button>
+              <el-button  icon="el-icon-s-order" @click="save" size="small" plain>存为套组</el-button>
+              <el-button  icon="el-icon-refresh" size="small" plain>刷新</el-button>
             </div>
             <el-link :underline="false">处置申请项目</el-link>
             <el-divider></el-divider>
@@ -448,7 +454,7 @@
                   <el-table-column prop="name" label="模板名称" width="200"></el-table-column>
                   <el-table-column label="操作">
                     <template slot-scope="scope">
-                      <el-button size="small" type="danger" @click="template(scope.row)">查看</el-button>
+                      <el-button size="small" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="template(scope.row)">查看</el-button>
                     </template>
                   </el-table-column>
                 </el-table>
@@ -469,13 +475,83 @@
               </el-card>
             </div>
           </el-tab-pane>
-          <el-tab-pane :disabled="paneDisable" label="成药处方"></el-tab-pane>
+          <el-tab-pane :disabled="paneDisable" label="成药处方">
+            <div class="head-button">
+              <el-button icon="el-icon-success" @click="done" size="small" plain
+                         style="
+  background-image: linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white"
+              >开药</el-button>
+              <el-button
+                      icon="el-icon-delete-solid"
+                      @click="clear"
+                      size="small"
+                      plain
+              >作废项目</el-button>
+              <el-button  icon="el-icon-s-order" @click="save" size="small" plain>存为模版</el-button>
+            </div>
+            <el-link :underline="false">处置申请项目</el-link>
+            <el-divider></el-divider>
+            <el-card class="box-card" style="width: 98%">
+              <div slot="header">
+                <span>药品列表</span>
+                <el-button
+                        style="float: right; padding: 3px 0"
+                        type="text"
+                        @click="dialogVisible = true"
+                >新增药品</el-button>
+              </div>
+              <div>
+                <el-table :data="itemTable" style="width: 100%">
+                  <el-table-column prop="itemName" label="药品名称" width="500"></el-table-column>
+                  <el-table-column prop="price" label="单价" width="500"></el-table-column>
+                  <el-table-column label="操作">
+                    <template slot-scope="scope">
+                      <el-button
+                              size="small"
+                              type="text"
+                              @click.native.prevent="deleteRow(scope.$index, itemTable)"
+                      >移除</el-button>
+                    </template>
+                  </el-table-column>
+                </el-table>
+              </div>
+            </el-card>
+            <br />
+            <br />
+            <el-link :underline="false">处方模版</el-link>
+            <el-divider></el-divider>
+            <div class="Div">
+              <div style="width:30%">
+                <el-table :data="prescriptionTable" size="mini" height="200" style="width:100%">
+                  <el-table-column prop="name" label="处方名称" width="200"></el-table-column>
+                  <el-table-column label="操作">
+                    <template slot-scope="scope">
+                      <el-button size="small" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="template(scope.row)">查看</el-button>
+                    </template>
+                  </el-table-column>
+                </el-table>
+              </div>
+
+              <el-card class="box-card" style="width: 60%">
+                <div slot="header">
+                  <span>处方明细</span>
+                  <el-button style="float: right; padding: 3px 0" type="text" @click="useTem">使用处方</el-button>
+                </div>
+                <div>
+                  <el-table :data="DtemplateTable" size="mini" style="width: 100%">
+                    <el-table-column prop="itemName" label="药品名称" width="200"></el-table-column>
+                    <el-table-column prop="price" label="单价"></el-table-column>
+                  </el-table>
+                </div>
+              </el-card>
+            </div>
+          </el-tab-pane>
           <el-tab-pane :disabled="paneDisable" label="草药处方"></el-tab-pane>
           <el-tab-pane :disabled="paneDisable" label="费用查询"></el-tab-pane>
         </el-tabs>
       </div>
     </div>
-    <el-dialog title="项目列表" :visible.sync="dialogVisible" width="60%" :before-close="handleClose">
+    <el-dialog title="药品项目列表" :visible.sync="dialogVisible" width="60%" :before-close="handleClose">
       <el-table :data="itemTable1" style="width: 100%">
         <el-table-column prop="itemNum" label="项目编号" width="200"></el-table-column>
         <el-table-column prop="itemName" label="项目名称" width="200"></el-table-column>
@@ -488,7 +564,7 @@
       </el-table>
       <span slot="footer" class="dialog-footer">
         <el-button @click="dialogVisible = false">取 消</el-button>
-        <el-button type="danger" @click="dialogVisible = false">确 定</el-button>
+        <el-button style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="kaiyao">确 定</el-button>
       </span>
     </el-dialog>
 
@@ -510,14 +586,14 @@
 
       <br />
       <br />
-      <el-link :underline="false" type="danger">总金额：{{sum}} ¥</el-link>
+<!--      <el-link :underline="false" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white">总金额：{{sum}} ¥</el-link>-->
       <br />
       <br />
       <span>开立时间：{{currentdate}}</span>
 
       <span slot="footer" class="dialog-footer">
         <el-button @click="dialogVisible1 = false">取 消</el-button>
-        <el-button type="danger" @click="submit">确定开立</el-button>
+        <el-button style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="submit">确定开立</el-button>
       </span>
     </el-dialog>
   </div>
@@ -564,6 +640,17 @@ export default {
           name: "偏头痛"
         }
       ],
+      prescriptionTable: [
+        {
+          name: "重感冒"
+        },
+        {
+          name: "结膜炎"
+        },
+        {
+          name: "高血压"
+        }
+      ],
 
       DtemplateTable: [],
 
@@ -571,40 +658,40 @@ export default {
 
       itemTable1: [
         {
-          name: "气脑造影",
+          name: "连花清瘟胶囊",
           depart: "内科",
           state: "待执行",
           result: "无",
           itemNum: "00001",
-          itemName: "气脑造影",
-          price: 22
+          itemName: "连花清瘟胶囊",
+          price: 10
         },
         {
-          name: "脑室造影",
+          name: "肥宅快乐水",
           depart: "内科",
           state: "待执行",
           result: "无",
           itemNum: 10000,
-          itemName: "脑室造影",
-          price: 44
+          itemName: "肥宅快乐水",
+          price: 10
         },
         {
-          name: "胃镜",
+          name: "红蓝药水",
           depart: "内科",
           state: "待执行",
           result: "无",
           itemNum: 10067,
-          itemName: "胃镜",
-          price: 22
+          itemName: "红蓝药水",
+          price: 10
         },
         {
-          name: "肠镜",
+          name: "健胃消食片",
           depart: "内科",
           state: "待执行",
           result: "无",
           itemNum: 10000,
-          itemName: "肠镜",
-          price: 44
+          itemName: "健胃消食片",
+          price: 10
         }
       ],
       sum: 0,
@@ -638,48 +725,33 @@ export default {
   mounted() {
     this.tableData = [
       {
-        records_num: 600600,
-        name: "李白",
-        age: 32
+        records_num: 100003,
+        name: "王小花",
+        age: 22
       },
       {
-        records_num: 600600,
-        name: "李白",
-        age: 32
+        records_num: 100004,
+        name: "王中花",
+        age: 43
       },
       {
-        records_num: 600600,
-        name: "李白",
-        age: 32
-      },
-      {
-        records_num: 600600,
-        name: "李白",
-        age: 32
+        records_num: 100005,
+        name: "王大花",
+        age: 87
       }
     ];
     this.tableData1 = [
       {
         records_num: 600600,
-        name: "李白",
-        age: 32
-      },
-      {
-        records_num: 600600,
-        name: "李白",
-        age: 32
-      },
-      {
-        records_num: 600600,
-        name: "李白",
-        age: 32
-      },
-      {
-        records_num: 600600,
-        name: "李白",
-        age: 32
+        name: "王巨花",
+        age: 105
       }
     ];
+    this.$axios.get("http://localhost:8080/getRegList")
+            .then(res=>{
+              console.log(res);
+              this.tableData = res.data;
+            })
   },
   methods: {
     selectResult() {
@@ -690,6 +762,10 @@ export default {
           date: this.currentdate
         }
       ];
+    },
+    kaiyao(){
+      this.dialogVisible = false;
+      console.log(this.checkTable)
     },
     done() {
       var date = new Date();
@@ -717,6 +793,23 @@ export default {
       this.dialogVisible1 = false;
       this.DtemplateTable = [];
       this.itemTable = [];
+      console.log(this.checkTable);
+      var drugList = [];
+      var cnt = 0;
+      var lengthOfCheck = this.checkTable.length;
+      console.log(lengthOfCheck);
+      for(cnt = 0; cnt < lengthOfCheck; cnt +=1){
+        drugList = drugList + "-" + this.checkTable[cnt].itemName;
+      }
+      console.log(drugList)
+      console.log(this.records_num)
+      this.$axios.get("http://localhost:8080/kaiyao",{params:{
+          "drugList":drugList,
+          "records_num":this.records_num
+        }})
+              .then(res=>{
+                console.log(res);
+              })
     },
     save() {
       this.$message.success("已存储");
@@ -744,19 +837,28 @@ export default {
     template(row) {
       this.DtemplateTable = [
         {
-          name: "模版:轻度骨折",
+          name: "模版:有病",
           itemNum: 10067,
-          itemName: "打石膏",
-          price: 22,
+          itemName: "连花清瘟胶囊",
+          price: 10,
           depart: "骨科",
           state: "待执行",
           result: "无"
         },
         {
-          name: "模版:轻度骨折",
+          name: "模版:有病",
           itemNum: 10000,
-          itemName: "正骨",
-          price: 44,
+          itemName: "乳酸菌素片",
+          price: 10,
+          depart: "骨科",
+          state: "待执行",
+          result: "无"
+        },
+        {
+          name: "模版:有病",
+          itemNum: 10000,
+          itemName: "肥宅快乐水",
+          price: 10,
           depart: "骨科",
           state: "待执行",
           result: "无"

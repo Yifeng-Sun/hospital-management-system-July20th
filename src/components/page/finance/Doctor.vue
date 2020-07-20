@@ -31,7 +31,7 @@
           :picker-options="pickerOptions"
         ></el-date-picker>
       </span>
-      <el-button type="danger">查询</el-button>
+      <el-button style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white">查询</el-button>
     </div>
     <br />
     <br />
@@ -45,7 +45,7 @@
     </el-table>
     <br />
     <br />
-    <el-button class="button" type="danger" @click="out">导出</el-button>
+    <el-button class="button" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="out">导出</el-button>
   </div>
 </template>
 
@@ -57,20 +57,20 @@ export default {
       end: "",
       tableData: [
         {
-          name: "许小梅",
+          name: "李源源",
           pnum: 20,
           num: 30,
-          price: 123,
-          price1: 123,
-          price2: 123
+          price: 53,
+          price1: 13,
+          price2: 143
         },
         {
-          name: "王波",
+          name: "林飞飞",
           pnum: 25,
           num: 38,
-          price: 13,
-          price1: 23,
-          price2: 123
+          price: 33,
+          price1: 33,
+          price2: 53
         }
       ],
       pickerOptions: {

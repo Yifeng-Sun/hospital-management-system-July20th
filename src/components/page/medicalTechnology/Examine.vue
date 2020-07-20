@@ -17,7 +17,7 @@
             <el-button slot="append" icon="el-icon-search"></el-button>
           </el-input>
 
-          <el-button size="small" icon="el-icon-refresh-right" type="danger" @click="refresh"></el-button>
+          <el-button size="small" icon="el-icon-refresh-right" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="refresh"></el-button>
         </div>
         <br />
 
@@ -33,7 +33,7 @@
           <el-table-column prop="age" label="年龄" width="75"></el-table-column>
           <el-table-column label="操作">
             <template slot-scope="scope">
-              <el-button size="small" type="danger" @click="dia(scope.row)">检验</el-button>
+              <el-button size="small" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="dia(scope.row)">检验</el-button>
             </template>
           </el-table-column>
         </el-table>
@@ -50,7 +50,7 @@
           <el-table-column prop="age" label="年龄" width="75"></el-table-column>
           <el-table-column label="操作">
             <template slot-scope="scope">
-              <el-button size="small" type="danger" @click="look(scope.row)">查看</el-button>
+              <el-button size="small" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="look(scope.row)">查看</el-button>
             </template>
           </el-table-column>
         </el-table>
@@ -60,7 +60,7 @@
       <div>
         <!-- 顶部文字div -->
         <div class="head-text">
-          <el-link :underline="false" type="danger">当前患者:</el-link>
+          <el-link :underline="false" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white">当前患者:</el-link>
           <span>{{Srecords_num}}</span>
           <span>{{Sname}}</span>
           <span>{{Sage}}</span>
@@ -108,7 +108,7 @@
                   <el-table-column prop="price" label="缴费金额"></el-table-column>
                   <el-table-column label="操作">
                     <template slot-scope="scope">
-                      <el-button type="danger" size="small" @click="dialogVisible=true">确定</el-button>
+                      <el-button style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" size="small" @click="dialogVisible=true">确定</el-button>
 
                       <el-button size="small" @click="cancelDialog(scope.$index)">取消</el-button>
                     </template>
@@ -129,7 +129,7 @@
                   <el-table-column prop="price" label="缴费金额"></el-table-column>
                   <el-table-column label="操作">
                     <template>
-                      <el-button type="danger" size="small" @click="dialogVisible1=true">录入结果</el-button>
+                      <el-button style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" size="small" @click="dialogVisible1=true">录入结果</el-button>
                     </template>
                   </el-table-column>
                 </el-table>
@@ -143,7 +143,7 @@
       <span>确认执行该项目？</span>
       <span slot="footer" class="dialog-footer">
         <el-button @click="dialogVisible = false">取 消</el-button>
-        <el-button type="danger" @click="sure">确 定</el-button>
+        <el-button style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="sure">确 定</el-button>
       </span>
     </el-dialog>
 
@@ -151,7 +151,7 @@
       <span>确认取消该项目？</span>
       <span slot="footer" class="dialog-footer">
         <el-button @click="dialogVisible2 = false">取 消</el-button>
-        <el-button type="danger" @click="cancel">确 定</el-button>
+        <el-button style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="cancel">确 定</el-button>
       </span>
     </el-dialog>
 
@@ -188,7 +188,7 @@
       </span>
       <span slot="footer" class="dialog-footer">
         <el-button @click="dialogVisible1 = false">取 消</el-button>
-        <el-button type="danger" @click="save">保存</el-button>
+        <el-button style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="save">保存</el-button>
       </span>
     </el-dialog>
   </div>

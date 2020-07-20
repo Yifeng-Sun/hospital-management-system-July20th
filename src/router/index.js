@@ -27,43 +27,43 @@ export default new Router({
         },
         {
           path: '/registration',
-          component: resolve => require(['../components/page/registration/Registration.vue'], resolve)
+          component: resolve => require(['../components/page/appointment/Registration.vue'], resolve)
         },
         {
           path: '/cancel',
-          component: resolve => require(['../components/page/registration/Cancel.vue'], resolve)
+          component: resolve => require(['../components/page/appointment/Cancel.vue'], resolve)
         },
         {
           path: '/search',
-          component: resolve => require(['../components/page/registration/Search.vue'], resolve)
+          component: resolve => require(['../components/page/appointment/AppointmentInfo.vue'], resolve)
         },
         {
           path: '/money',
-          component: resolve => require(['../components/page/registration/Money.vue'], resolve)
+          component: resolve => require(['../components/page/appointment/Charge.vue'], resolve)
         },
         {
           path: '/return',
-          component: resolve => require(['../components/page/registration/Return.vue'], resolve)
+          component: resolve => require(['../components/page/appointment/Return.vue'], resolve)
         },
         {
           path: '/bill',
-          component: resolve => require(['../components/page/registration/Bill.vue'], resolve)
+          component: resolve => require(['../components/page/appointment/SearchBill.vue'], resolve)
         },
         {
           path: '/day',
-          component: resolve => require(['../components/page/registration/Day.vue'], resolve)
+          component: resolve => require(['../components/page/appointment/Day.vue'], resolve)
         },
         {
           path: '/diagnose',
-          component: resolve => require(['../components/page/doctor/Diagnose.vue'], resolve)
+          component: resolve => require(['../components/page/diagnosis/Diagnose.vue'], resolve)
         },
         {
           path: '/diagnose1',
-          component: resolve => require(['../components/page/doctor/Diagnose1.vue'], resolve)
+          component: resolve => require(['../components/page/diagnosis/Diagnose1.vue'], resolve)
         },
         {
           path: '/template',
-          component: resolve => require(['../components/page/doctor/Template.vue'], resolve)
+          component: resolve => require(['../components/page/diagnosis/Template.vue'], resolve)
         },
         {
           path: '/check',

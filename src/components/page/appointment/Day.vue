@@ -7,7 +7,7 @@
     </el-breadcrumb>
     <br />
     <br />
-    <el-link :underline="false" type="danger">今日收费信息清单</el-link>
+    <el-link :underline="false" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white">今日收费信息清单</el-link>
     <el-divider></el-divider>
     <el-table :data="tableData" style="width:100%">
       <el-table-column prop="id" label="序号"></el-table-column>
@@ -22,9 +22,9 @@
     <div class="bottom">
       <span>应收：{{sum}}¥</span>
 
-      <span>实收：{{sum}}¥</span>
+<!--      <span>实收：{{sum}}¥</span>-->
 
-      <el-button type="danger" @click="settle">结算报帐</el-button>
+      <el-button style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="settle">结算报帐</el-button>
     </div>
   </div>
 </template>
@@ -33,23 +33,23 @@
 export default {
   data() {
     return {
-      sum: 256,
+      sum: 590,
       tableData: [
         {
           id: 1,
-          records_num: 600600,
-          name: "李白",
-          Num: "1402871988",
-          regTime: "2020-01-01",
-          price: 123
+          records_num: 100001,
+          name: "李大牛",
+          Num: "1887362917",
+          regTime: "2020-07-01",
+          price: 45
         },
         {
           id: 2,
           records_num: 600610,
           name: "黄是",
-          Num: "1402871983",
-          regTime: "2020-01-01",
-          price: 133
+          Num: "7362518763",
+          regTime: "2020-07-01",
+          price: 545
         }
       ]
     };

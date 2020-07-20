@@ -21,17 +21,16 @@
       <el-input v-model="records_num" style="width:195px" placeholder="请输入"></el-input>
 
       <div>
-        <el-button icon="el-icon-search" type="danger" @click="search">搜索</el-button>
-        <el-button icon="el-icon-delete" type="danger" @click="clear">清空</el-button>
+        <el-button icon="el-icon-search" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="search">搜索</el-button>
+        <el-button icon="el-icon-delete" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="clear">清空</el-button>
       </div>
     </div>
     <br />
     <br />
     <el-table :data="tableData" style="width: 100%">
-      <el-table-column prop="records_num" label="病历号" width="200"></el-table-column>
-      <el-table-column prop="name" label="姓名" width="200"></el-table-column>
+      <el-table-column prop="pName" label="姓名" width="200"></el-table-column>
       <el-table-column prop="idCardNum" label="身份证号" width="300"></el-table-column>
-      <el-table-column prop="itemsName" label="项目名称" width="250"></el-table-column>
+      <el-table-column prop="dName" label="项目名称" width="250"></el-table-column>
       <el-table-column prop="price" label="单价" width="200"></el-table-column>
       <el-table-column prop="num" label="数量" width="200"></el-table-column>
       <el-table-column prop="state" label="状态"></el-table-column>
@@ -39,7 +38,7 @@
 
     <br />
     <br />
-    <el-link :underline="false" type="danger">总金额：{{sum}} ¥</el-link>
+    <el-link :underline="false" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white">总金额：{{sum}} ¥</el-link>
     <el-divider></el-divider>
     <div class="input">
       <span>
@@ -51,7 +50,7 @@
         找零：
         <el-input v-model="Rm" style="width:200px" :disabled="true"></el-input>
       </span>
-      <el-button type="danger" @click="settle">收费结算</el-button>
+      <el-button style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="settle">收费结算</el-button>
     </div>
     <el-dialog title="结算" :visible.sync="dialogVisible" width="30%" :before-close="handleClose">
       <span>信息核对：</span>
@@ -63,10 +62,10 @@
       <span>身份证号：{{idCard}}</span>
       <br />
       <br />
-      <el-link :underline="false" type="danger">总金额：{{sum}} ¥</el-link>
+      <el-link :underline="false" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white">总金额：{{sum}} ¥</el-link>
       <br />
       <br />
-      <el-link :underline="false" type="danger">实收金额：{{Tm}} ¥</el-link>
+      <el-link :underline="false" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white">实收金额：{{Tm}} ¥</el-link>
       <br />
       <br />
       <el-link :underline="false" type="success">找零：{{Rm}} ¥</el-link>
@@ -76,7 +75,7 @@
       <span>请在收费找零完成后点击确定打印发票</span>
       <span slot="footer" class="dialog-footer">
         <el-button @click="dialogVisible = false">取 消</el-button>
-        <el-button type="danger" @click="sureSettle">确 定</el-button>
+        <el-button style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="sureSettle">确 定</el-button>
       </span>
     </el-dialog>
   </div>
@@ -93,7 +92,7 @@ export default {
       idCard: "",
       tableData: [],
       dialogVisible: false,
-      sum: 0,
+      sum: 20,
       Tm: "",
       Rm: ""
     };
@@ -111,29 +110,36 @@ export default {
       if (this.records_num == "") {
         this.$message.warning("请先输入病历号再搜索");
       } else {
-        (this.tableData = [
-          {
-            records_num: this.records_num,
-            name: "李白",
-            idCardNum: "140227199908090090",
-            itemsName: "板蓝根",
-            price: 30,
-            num: 1,
-            state: "未缴费"
-          },
-          {
-            records_num: this.records_num,
-            name: "李白",
-            idCardNum: "140227199908090090",
-            itemsName: "双黄连",
-            price: 30,
-            num: 1,
-            state: "未缴费"
-          }
-        ]),
-          (this.sum = 60),
-          (this.name = "李白"),
-          (this.idCard = "140227199908090090");
+        // (this.tableData = [
+        //   {
+        //     records_num: this.records_num,
+        //     name: "李白",
+        //     idCardNum: "140227199908090090",
+        //     itemsName: "板蓝根",
+        //     price: 30,
+        //     num: 1,
+        //     state: "未缴费"
+        //   },
+        //   {
+        //     records_num: this.records_num,
+        //     name: "李白",
+        //     idCardNum: "140227199908090090",
+        //     itemsName: "双黄连",
+        //     price: 30,
+        //     num: 1,
+        //     state: "未缴费"
+        //   }
+        // ]),
+        //   (this.sum = 60),
+        //   (this.name = "李白"),
+        //   (this.idCard = "140227199908090090");
+        this.$axios.get("http://localhost:8080/getKaiyaoList",{params:{
+          "records_num":this.records_num
+          }})
+                .then(res=>{
+                  console.log(res);
+                  this.tableData = res.data;
+                })
       }
     },
 
@@ -145,6 +151,14 @@ export default {
     sureSettle() {
       this.dialogVisible = false;
       // this.search();
+      this.reload();
+      this.$axios.get("http://localhost:8080/updateFayao",{params:{
+          "records_num":this.records_num
+        }})
+              .then(res=>{
+                console.log(res);
+                this.tableData = res.data;
+              })
       this.$message.success("收费成功");
     },
     handleClose(done) {

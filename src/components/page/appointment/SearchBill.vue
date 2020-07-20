@@ -21,8 +21,8 @@
       <el-input v-model="records_num" style="width:195px" placeholder="请输入"></el-input>
 
       <div>
-        <el-button icon="el-icon-search" type="danger" @click="search">搜索</el-button>
-        <el-button icon="el-icon-delete" type="danger" @click="clear">清空</el-button>
+        <el-button icon="el-icon-search" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="search">搜索</el-button>
+        <el-button icon="el-icon-delete" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="clear">清空</el-button>
       </div>
     </div>
     <br />
@@ -41,8 +41,8 @@
 
       <el-table-column label="操作">
         <template>
-          <el-button size="small" type="danger" @click="settle()">发票补打</el-button>
-          <el-button size="small" type="danger" @click="settle()">发票重打</el-button>
+          <el-button size="small" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="settle()">发票补打</el-button>
+          <el-button size="small" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="settle()">发票重打</el-button>
         </template>
       </el-table-column>
     </el-table>

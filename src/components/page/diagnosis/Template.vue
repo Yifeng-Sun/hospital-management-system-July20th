@@ -17,14 +17,14 @@
             <el-button slot="append" icon="el-icon-search"></el-button>
           </el-input>
 
-          <el-button size="small" icon="el-icon-refresh-right" type="danger" @click="refresh"></el-button>
+          <el-button size="small" icon="el-icon-refresh-right" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="refresh"></el-button>
         </div>
         <br />
         <br />
 
         <div class="Div">
           <el-link :underline="false">模版列表:</el-link>
-          <el-button size="small" type="danger" @click="dialogVisible = true">新增模版</el-button>
+          <el-button size="small" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="dialogVisible = true">新增模版</el-button>
         </div>
         <!-- <el-tag type="warning">待诊患者</el-tag> -->
         <br />
@@ -37,7 +37,7 @@
           <el-table-column label="操作" width="150">
             <template slot-scope="scope">
               <el-button size="small" @click="look(scope.row)">查看</el-button>
-              <el-button size="small" type="danger" @click="del(scope.$index)">删除</el-button>
+              <el-button size="small" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="del(scope.$index)">删除</el-button>
             </template>
           </el-table-column>
         </el-table>
@@ -48,7 +48,7 @@
       <!-- 右侧div -->
       <div style="width: 1100px">
         <!-- 顶部文字div -->
-        <el-link :underline="false" type="danger">模版信息:</el-link>
+        <el-link :underline="false" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white">模版信息:</el-link>
         <el-divider></el-divider>
 
         <div class="head-text">
@@ -92,7 +92,7 @@
         <br />
         <br />
         <div class="bottom-b">
-          <el-button type="danger" @click="save">保存</el-button>
+          <el-button style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="save">保存</el-button>
           <el-button @click="can">取消</el-button>
         </div>
       </div>
@@ -101,7 +101,7 @@
       确认删除处方？
       <span slot="footer" class="dialog-footer">
         <el-button @click="dialogVisible2 = false">取 消</el-button>
-        <el-button type="danger" @click="sureDel">确 定</el-button>
+        <el-button style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="sureDel">确 定</el-button>
       </span>
     </el-dialog>
 
@@ -121,7 +121,7 @@
 
       <span slot="footer" class="dialog-footer">
         <el-button @click="dialogVisible3 = false">取 消</el-button>
-        <el-button type="danger" @click="dialogVisible3 = false">确 定</el-button>
+        <el-button style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="dialogVisible3 = false">确 定</el-button>
       </span>
     </el-dialog>
 
@@ -152,7 +152,7 @@
       <br />
       <span slot="footer" class="dialog-footer">
         <el-button @click="dialogVisible = false">取 消</el-button>
-        <el-button type="danger" @click="newTem">确 定</el-button>
+        <el-button style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="newTem">确 定</el-button>
       </span>
     </el-dialog>
   </div>

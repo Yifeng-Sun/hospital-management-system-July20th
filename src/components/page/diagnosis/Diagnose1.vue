@@ -17,7 +17,7 @@
             <el-button slot="append" icon="el-icon-search"></el-button>
           </el-input>
 
-          <el-button size="small" icon="el-icon-refresh-right" type="danger" @click="refresh"></el-button>
+          <el-button size="small" icon="el-icon-refresh-right" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="refresh"></el-button>
         </div>
         <br />
         <!-- 左侧tab -->
@@ -35,7 +35,7 @@
               <el-table-column prop="age" label="年龄" width="75"></el-table-column>
               <el-table-column label="操作">
                 <template slot-scope="scope">
-                  <el-button size="small" type="danger" @click="dia(scope.row)">诊断</el-button>
+                  <el-button size="small" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="dia(scope.row)">诊断</el-button>
                 </template>
               </el-table-column>
             </el-table>
@@ -52,7 +52,7 @@
               <el-table-column prop="age" label="年龄" width="75"></el-table-column>
               <el-table-column label="操作">
                 <template slot-scope="scope">
-                  <el-button size="small" type="danger" @click="look(scope.row)">查看</el-button>
+                  <el-button size="small" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="look(scope.row)">查看</el-button>
                 </template>
               </el-table-column>
             </el-table>
@@ -70,7 +70,7 @@
               <el-table-column prop="age" label="年龄" width="75"></el-table-column>
               <el-table-column label="操作">
                 <template slot-scope="scope">
-                  <el-button size="small" type="danger" @click="dia(scope.row)">诊断</el-button>
+                  <el-button size="small" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="dia(scope.row)">诊断</el-button>
                 </template>
               </el-table-column>
             </el-table>
@@ -87,7 +87,7 @@
               <el-table-column prop="age" label="年龄" width="75"></el-table-column>
               <el-table-column label="操作">
                 <template slot-scope="scope">
-                  <el-button size="small" type="danger" @click="drug(scope.row)">查看</el-button>
+                  <el-button size="small" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="drug(scope.row)">查看</el-button>
                 </template>
               </el-table-column>
             </el-table>
@@ -99,7 +99,7 @@
       <div>
         <!-- 顶部文字div -->
         <div class="head-text">
-          <el-link :underline="false" type="danger">当前患者:</el-link>
+          <el-link :underline="false" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white">当前患者:</el-link>
           <span>{{Srecords_num}}</span>
           <span>{{Sname}}</span>
           <span>{{Sage}}</span>
@@ -122,7 +122,7 @@
                 plain
               >开立新处方</el-button>
               <el-button
-                type="danger"
+                style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white"
                 icon="el-icon-delete-solid"
                 @click="clear"
                 size="small"
@@ -154,7 +154,7 @@
                   <el-table-column prop="name" label="处方名称"></el-table-column>
                   <el-table-column label="操作">
                     <template slot-scope="scope">
-                      <el-button size="small" type="danger" @click="change(scope.row)">修改</el-button>
+                      <el-button size="small" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="change(scope.row)">修改</el-button>
                     </template>
                   </el-table-column>
                 </el-table>
@@ -202,7 +202,7 @@
                 plain
               >开立新处方</el-button>
               <el-button
-                type="danger"
+                style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white"
                 icon="el-icon-delete-solid"
                 @click="clear"
                 size="small"
@@ -234,7 +234,7 @@
                   <el-table-column prop="name" label="处方名称"></el-table-column>
                   <el-table-column label="操作">
                     <template slot-scope="scope">
-                      <el-button size="small" type="danger" @click="change(scope.row)">修改</el-button>
+                      <el-button size="small" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="change(scope.row)">修改</el-button>
                     </template>
                   </el-table-column>
                 </el-table>
@@ -292,7 +292,7 @@
       确认发送处方
       <span slot="footer" class="dialog-footer">
         <el-button @click="dialogVisible2 = false">取 消</el-button>
-        <el-button type="danger" @click="send">确 定</el-button>
+        <el-button style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="send">确 定</el-button>
       </span>
     </el-dialog>
 
@@ -306,7 +306,7 @@
             <el-table-column prop="name" label="模板名称" width="150"></el-table-column>
             <el-table-column label="操作">
               <template slot-scope="scope">
-                <el-button size="small" type="danger" @click="template(scope.row)">查看</el-button>
+                <el-button size="small" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="template(scope.row)">查看</el-button>
               </template>
             </el-table-column>
           </el-table>
@@ -369,7 +369,7 @@
       <br />
       <span slot="footer" class="dialog-footer">
         <el-button @click="dialogVisible = false">取 消</el-button>
-        <el-button type="danger" @click="add">确 定</el-button>
+        <el-button style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="add">确 定</el-button>
       </span>
     </el-dialog>
 
@@ -400,7 +400,7 @@
       <br />
       <span slot="footer" class="dialog-footer">
         <el-button @click="dialogVisible3 = false">取 消</el-button>
-        <el-button type="danger" @click="newPre">确 定</el-button>
+        <el-button style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="newPre">确 定</el-button>
       </span>
     </el-dialog>
   </div>

@@ -24,17 +24,17 @@
     </div>
     <br />
     <br />
-    <el-link :underline="false" type="danger">基本信息</el-link>
+    <el-link :underline="false" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white">基本信息</el-link>
     <span>&nbsp;&nbsp;</span>
-    <el-popover
-      placement="right"
-      title="证件读取中..."
-      width="200"
-      trigger="click"
-      content="请将身份证或医保卡放置在读卡器上"
-    >
-      <el-button slot="reference" plain size="small" round type="success">证件读取</el-button>
-    </el-popover>
+<!--    <el-popover-->
+<!--      placement="right"-->
+<!--      title="证件读取中..."-->
+<!--      width="200"-->
+<!--      trigger="click"-->
+<!--      content="请将身份证或医保卡放置在读卡器上"-->
+<!--    >-->
+<!--      <el-button slot="reference" plain size="small" round type="success">证件读取</el-button>-->
+<!--    </el-popover>-->
     <el-divider></el-divider>
     <div class="input">
       <span>
@@ -81,9 +81,6 @@
       </span>
     </div>
     <br />
-    <br />
-    <el-link :underline="false" type="danger">挂号信息</el-link>
-    <el-divider></el-divider>
     <div class="input">
       <span>
         科室类别：
@@ -133,7 +130,7 @@
     <br />
     <br />
 
-    <el-link :underline="false" type="danger">费用结算</el-link>
+    <el-link :underline="false" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white">费用结算</el-link>
     <el-divider></el-divider>
     <div class="fee">
       <span>
@@ -148,8 +145,8 @@
         <el-input style="width:150px" v-model="price" :disabled="true"></el-input>
       </span>
       <div>
-        <el-button icon="el-icon-bell" type="danger" :disabled="reg" @click="finish">挂号</el-button>
-        <el-button icon="el-icon-delete" type="danger" @click="clear">清空</el-button>
+        <el-button icon="el-icon-bell" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" :disabled="reg" @click="finish">挂号</el-button>
+        <el-button icon="el-icon-delete" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="clear">清空</el-button>
       </div>
     </div>
   </div>
@@ -171,7 +168,7 @@ export default {
       recordsNumDisabled: false,
       newDisabled: false,
       records_num: "",
-      name: "",
+      name: "to be edit",
       sex: "",
       idCardNum: "",
       Birthday: "",
@@ -252,7 +249,40 @@ export default {
   methods: {
     finish() {
       this.$message.success("挂号成功");
-      this.reload();
+      // this.reload();
+      console.log(this.name + "registered");
+
+      var newReg={};
+      newReg.records_num = this.records_num
+      newReg.pName = this.name
+      newReg.sex = this.sex
+      newReg.idCardNum = this.idCardNum
+      newReg.Birthday = this.Birthday
+      newReg.age = this.age
+      newReg.homeAddress = this.homeAddress
+      newReg.department_type_id = this.department_type_id
+      newReg.department_id = this.department_id
+      newReg.reg_level_id = this.reg_level_id
+      newReg.doctor_id = this.doctor_id
+      console.log(newReg);
+      var StringReg = JSON.stringify(newReg)
+
+      this.$axios.get("http://localhost:8080/test",{params:{
+          records_num : this.records_num,
+          pName : this.name,
+          sex : this.sex,
+          idCardNum : this.idCardNum,
+          Birthday : this.Birthday,
+          age : this.age,
+          homeAddress : this.homeAddress,
+          department_type_id : this.department_type_id,
+          department_id : this.department_id,
+          reg_level_id : this.reg_level_id,
+          doctor_id : this.doctor_id
+        }})
+              .then(res=>{
+                console.log(res);
+              })
     },
     books() {
       this.price = this.price + this.book;
@@ -268,7 +298,7 @@ export default {
       if (this.records_num == "") {
         this.$message.warning("查询前请输入病历号！");
       } else {
-        if (this.records_num != 600600) {
+        if (this.records_num != 100100) {
           this.$message.warning("没有查到病历号，已自动生成新病历号");
           this.New();
           this.recordsNumDisabled = true;
@@ -286,8 +316,8 @@ export default {
       }
     },
     New() {
-      this.records_num = 600789;
-      this.recordsNumDisabled = true;
+      this.records_num = 100106;
+      // this.recordsNumDisabled = true;
     },
     getage() {
       var birthdays = new Date(this.Birthday.replace(/-/g, "-"));
@@ -326,4 +356,7 @@ export default {
   justify-content: space-between;
   width: 30%;
 }
+/*#app{*/
+/*  background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white; height: 1000px*/
+/*}*/
 </style>

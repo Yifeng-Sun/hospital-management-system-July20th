@@ -49,7 +49,7 @@
     </el-table>
     <br />
     <br />
-    <el-button class="button" type="danger" @click="save">保存</el-button>
+    <el-button class="button" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="save">保存</el-button>
   </div>
 </template>
 
@@ -64,30 +64,9 @@ export default {
         {
           id: 1,
           pid: "002",
-          name: "白余",
+          name: "刘大力",
           time: "2020-01-01",
-          price: 123
-        },
-        {
-          id: 2,
-          pid: "002",
-          name: "白余",
-          time: "2020-01-01",
-          price: 123
-        },
-        {
-          id: 3,
-          pid: "002",
-          name: "白余",
-          time: "2020-01-01",
-          price: 123
-        },
-        {
-          id: 4,
-          pid: "002",
-          name: "白余",
-          time: "2020-01-01",
-          price: 123
+          price: 332
         }
       ],
       pids: [

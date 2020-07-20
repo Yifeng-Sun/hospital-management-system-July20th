@@ -3,7 +3,7 @@
     <el-breadcrumb separator-class="el-icon-arrow-right">
       <el-breadcrumb-item :to="{ path: '/main' }">首页</el-breadcrumb-item>
       <el-breadcrumb-item>挂号收费</el-breadcrumb-item>
-      <el-breadcrumb-item>退号</el-breadcrumb-item>
+      <el-breadcrumb-item>挂号信息管理</el-breadcrumb-item>
     </el-breadcrumb>
     <br />
     <br />
@@ -20,15 +20,14 @@
       </el-dropdown>
       <el-input v-model="records_num" style="width:195px" placeholder="请输入"></el-input>
 
-      <!-- <span>病历号：<el-input v-model="records_num" style="width:195px" placeholder="请输入病历号"></el-input></span> -->
       <div>
-        <el-button icon="el-icon-search" type="danger" @click="search">搜索</el-button>
-        <el-button icon="el-icon-delete" type="danger" @click="clear">清空</el-button>
+        <el-button icon="el-icon-search" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="search">搜索</el-button>
+        <el-button icon="el-icon-delete" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="clear">清空</el-button>
       </div>
     </div>
     <br />
     <br />
-    <span>患者挂号信息（未诊断未退号）：</span>
+    <span>患者挂号信息：</span>
     <br />
     <br />
     <el-table
@@ -57,7 +56,7 @@
 
       <el-table-column label="操作">
         <template slot-scope="scope">
-          <el-button size="small" type="danger" @click="cancel(scope.row,scope.$index)">退号</el-button>
+          <el-button size="small" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="cancel(scope.row,scope.$index)">修改</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -72,7 +71,7 @@
       :total="tableData.length"
     ></el-pagination>
 
-    <el-dialog title="退号操作" :visible.sync="dialogVisible" width="30%" :before-close="handleClose">
+    <el-dialog title="修改操作" :visible.sync="dialogVisible" width="30%" :before-close="handleClose">
       <span>信息核对：</span>
       <br />
       <br />
@@ -82,13 +81,10 @@
       <span>身份证号：{{idCard}}</span>
       <br />
       <br />
-      <el-link :underline="false" type="danger">需退挂号费：20¥</el-link>
-      <br />
-      <br />
-      <span>是否确定退号？</span>
+      <span>是否确定修改？</span>
       <span slot="footer" class="dialog-footer">
         <el-button @click="dialogVisible = false">取 消</el-button>
-        <el-button type="danger" @click="sureCancel">确 定</el-button>
+        <el-button style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="sureCancel">确 定</el-button>
       </span>
     </el-dialog>
   </div>
@@ -105,21 +101,19 @@ export default {
       idCard: "",
       tableData: [
         {
-          records_num: 600600,
-          name: "李白",
-          name: "李白",
-          idCardNum: "140287198802010010",
-          regTime: "2020-02-01",
+          records_num: 100001,
+          name: "李大牛",
+          idCardNum: "209384719998475091",
+          regTime: "2020-07-01",
           department: "内科",
           doctor: "华佗",
           state: "未诊断"
         },
         {
-          records_num: 600600,
-          name: "李白",
-          name: "李白",
-          idCardNum: "140287198802010010",
-          regTime: "2020-01-01",
+          records_num: 100002,
+          name: "王大壮",
+          idCardNum: "797382748893724391",
+          regTime: "2020-07-03",
           department: "内科",
           doctor: "华佗",
           state: "未诊断"
@@ -151,8 +145,6 @@ export default {
     },
     sureCancel() {
       this.dialogVisible = false;
-      this.tableData.splice(this.index, 1);
-      this.$message.success("退号成功");
     },
     handleSizeChange(size) {
       //一页显示多少条

@@ -13,8 +13,8 @@
 
       <!-- <span>病历号：<el-input v-model="records_num" style="width:195px" placeholder="请输入病历号"></el-input></span> -->
       <div>
-        <el-button icon="el-icon-search" type="danger" @click="search">搜索</el-button>
-        <el-button icon="el-icon-plus" type="danger" @click="dialogVisible = true">新增</el-button>
+        <el-button icon="el-icon-search" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="search">搜索</el-button>
+        <el-button icon="el-icon-plus" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="dialogVisible = true">新增</el-button>
       </div>
     </div>
 
@@ -34,7 +34,7 @@
       <el-table-column label="操作">
         <template slot-scope="scope">
           <el-button size="small" @click="dialogVisible2 = true">更改</el-button>
-          <el-button size="small" type="danger" @click="cancel(scope.row,scope.$index)">删除</el-button>
+          <el-button size="small" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="cancel(scope.row,scope.$index)">删除</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -53,7 +53,7 @@
       <span>是否确定删除？</span>
       <span slot="footer" class="dialog-footer">
         <el-button @click="dialogVisible1 = false">取 消</el-button>
-        <el-button type="danger" @click="sureCancel">确 定</el-button>
+        <el-button style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="sureCancel">确 定</el-button>
       </span>
     </el-dialog>
 
@@ -93,7 +93,7 @@
       <br />
       <span slot="footer" class="dialog-footer">
         <el-button @click="dialogVisible = false">取 消</el-button>
-        <el-button type="danger" @click="add">确 定</el-button>
+        <el-button style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="add">确 定</el-button>
       </span>
     </el-dialog>
 
@@ -130,7 +130,7 @@
       <br />
       <span slot="footer" class="dialog-footer">
         <el-button @click="dialogVisible2 = false">取 消</el-button>
-        <el-button type="danger" @click="change">确 定</el-button>
+        <el-button style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="change">确 定</el-button>
       </span>
     </el-dialog>
   </div>
@@ -152,22 +152,22 @@ export default {
       price5: "",
       tableData: [
         {
-          id: 1,
-          price1: 11,
+          id: 100001,
+          price1: 121,
 
           price2: 22,
-          price3: 33,
-          price4: 44,
-          price5: 55
+          price3: 323,
+          price4: 24,
+          price5: 5225
         },
         {
-          id: 2,
+          id: 100002,
 
           price1: 11,
-          price2: 43,
-          price3: 22,
-          price4: 33,
-          price5: 56
+          price2: 4233,
+          price3: 2442,
+          price4: 23,
+          price5: 536
         }
       ],
       currentPage: 1, //默认页码为1

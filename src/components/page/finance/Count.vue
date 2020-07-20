@@ -31,7 +31,7 @@
           :picker-options="pickerOptions"
         ></el-date-picker>
       </span>
-      <el-button type="danger" @click="out">导出</el-button>
+      <el-button style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="out">导出</el-button>
     </div>
     <br />
     <br />
@@ -54,26 +54,26 @@
 export default {
   data() {
     return {
-      img1: require("../../../assets/1.jpg"),
-      img2: require("../../../assets/2.jpg"),
+      img1: require("../../../../static/icons8-puzzle-64.png"),
+      img2: require("../../../../static/icons8-puzzle-64.png"),
       start: "",
       end: "",
       tableData: [
         {
           part: "内科",
           pnum: 20,
-          num: 30,
-          price: 123,
-          price1: 123,
-          price2: 123
+          num: 123,
+          price: 4433,
+          price1: 4400,
+          price2: 330
         },
         {
-          part: "妇产科",
-          pnum: 25,
-          num: 38,
-          price: 13,
-          price1: 23,
-          price2: 123
+          part: "外科",
+          pnum: 433,
+          num: 344,
+          price: 11223,
+          price1: 223,
+          price2: 4220
         }
       ],
       pickerOptions: {

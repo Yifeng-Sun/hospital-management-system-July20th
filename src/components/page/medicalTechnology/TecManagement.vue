@@ -31,8 +31,8 @@
         </el-select>
       </span>
       <div>
-        <el-button @click="search" type="danger">查询</el-button>
-        <el-button @click="dialogVisible1 = true" type="danger">新增</el-button>
+        <el-button @click="search" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white">查询</el-button>
+        <el-button @click="dialogVisible1 = true" style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white">新增</el-button>
       </div>
 
       <div>
@@ -48,7 +48,7 @@
       <el-table-column prop="price" label="缴费金额"></el-table-column>
       <el-table-column label="操作">
         <template slot-scope="scope">
-          <el-button type="danger" size="small" @click="dialogVisible=true">修改</el-button>
+          <el-button style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" size="small" @click="dialogVisible=true">修改</el-button>
 
           <el-button size="small" @click="cancelDialog(scope.$index)">删除</el-button>
         </template>
@@ -78,7 +78,7 @@
       </span>
       <span slot="footer" class="dialog-footer">
         <el-button @click="dialogVisible = false">取 消</el-button>
-        <el-button type="danger" @click="sure">确 定</el-button>
+        <el-button style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="sure">确 定</el-button>
       </span>
     </el-dialog>
 
@@ -108,7 +108,7 @@
       </span>
       <span slot="footer" class="dialog-footer">
         <el-button @click="dialogVisible = false">取 消</el-button>
-        <el-button type="danger" @click="New">确 定</el-button>
+        <el-button style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="New">确 定</el-button>
       </span>
     </el-dialog>
 
@@ -116,7 +116,7 @@
       <span>确认删除该项目？</span>
       <span slot="footer" class="dialog-footer">
         <el-button @click="dialogVisible2 = false">取 消</el-button>
-        <el-button type="danger" @click="cancel">确 定</el-button>
+        <el-button style="background-image:linear-gradient(134deg, #00e2ff 0%, #bb00ff 100%); color: white" @click="cancel">确 定</el-button>
       </span>
     </el-dialog>
   </div>
